@@ -1,9 +1,5 @@
 #include <stdio.h>
 
-// Boolean
-#define TRUE  1
-#define FALSE 0
-
 /* This program shows "true" if a given string contains
  * balanced parentheses, or "false" if otherwise:
  *     (())  -> "true"
@@ -15,8 +11,13 @@
 
 #define MAXLENGTH 200
 
-int get_line(char line[], int lim);
-int is_balanced(char line[], int lim);
+// Boolean
+typedef int bool;
+enum { false, true };
+
+// Functions
+int  get_line(char line[], int lim);
+bool is_balanced(char line[], int lim);
 
 main()
 {
@@ -53,7 +54,7 @@ int getline(char line[], int lim)
 
 // Return TRUE (1) if parenthesis in line 
 // are balanced or FALSE (0) otherwise.
-int is_balanced(char line[], int lim)
+bool is_balanced(char line[], int lim)
 {
 	int level = 0;
 	int i;
@@ -63,7 +64,7 @@ int is_balanced(char line[], int lim)
 		// Return FALSE if level is negative,
 		// since internal parenthesis are not balanced.
 		if(level < 0)
-			return FALSE;
+			return false;
 		
 		// Increase or decrease level
 		// for parentheses
@@ -77,7 +78,7 @@ int is_balanced(char line[], int lim)
 	// Return false if number of opening parentheses
 	// doesn't match the number of closing parentheses.
 	if(level != 0)
-		return FALSE;
+		return false;
 		
-	return TRUE;
+	return true;
 }
