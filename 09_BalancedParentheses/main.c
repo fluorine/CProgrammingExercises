@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 
 /* This program shows "true" if a given string contains
  * balanced parentheses, or "false" if otherwise:
@@ -10,10 +11,6 @@
  */
 
 #define MAXLENGTH 200
-
-// Boolean
-typedef int bool;
-enum { false, true };
 
 // Functions
 int  get_line(char line[], int lim);
