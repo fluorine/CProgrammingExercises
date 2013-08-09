@@ -16,7 +16,13 @@ struct time updateTime(struct time);
 struct time displayTime(struct time);
 
 int main() {
-	struct time d = {0, 0, 0};
+	struct time d;
+	
+	// Initialize date
+	printf("Initialize time (hh:mm:ss) > ");
+	scanf("%i:%i:%i", &d.hour, &d.minute, &d.second);
+	printf("Press enter to update time.\n\n");
+	
 	while(1)
 	{
 		displayTime(d);
