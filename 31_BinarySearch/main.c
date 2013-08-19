@@ -2,6 +2,9 @@
 
 /* This program implements the Binary Search Algorithm
  * to find a number in an array of integers.
+ *
+ * The program also counts the number of steps that
+ * were required to find the number.
  */
  
  #define ARRAYSIZE 12
@@ -10,6 +13,9 @@ int compareTo(int, int);
 int showArray(int[], int);
 int find(int, int[], int);
 int binarySearch(int, int[], int, int);
+
+// Counter of steps in the binary search algorithm
+int gAlgorithmStepsCounter;
 
 int main() {
 	int numbers[] = {1, 2, 4, 5, 7, 8, 11, 15, 17, 33, 40, 45};
@@ -26,9 +32,11 @@ int main() {
 		// Find number
 		index = find(i, numbers, ARRAYSIZE);
 		if(index != -1)
-			printf("  Number %i found at %i.\n\n", i, index);
+			printf("  Number %i found at %i. (%i steps)\n\n",
+			       i, index, gAlgorithmStepsCounter);
 		else
-			printf("  Number %i was NOT found.\n\n", i);
+			printf("  Number %i was NOT found. (%i steps)\n\n",
+			       i, gAlgorithmStepsCounter);
 	}
 	
 	return 0;
@@ -38,13 +46,20 @@ int main() {
 // to look for a number in the given array.
 int find(int target, int numbers[], int size)
 {
+	// Reset counter for Binary Search steps
+	gAlgorithmStepsCounter = 0;
+	
 	return binarySearch(target, numbers, 0, size);
 }
 
 // Implementation of the Recursive Binary Search algorithm
 int binarySearch(int target, int numbers[],
                  int start, int limit)
-{	
+{
+	// Counting algorithm stepts
+	gAlgorithmStepsCounter++;
+	
+	// Recursive Binary Search algorithm	
 	if(limit - start < 1)
 		return -1;
 	else {
