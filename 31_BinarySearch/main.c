@@ -7,22 +7,23 @@
  * were required to find the number.
  */
  
- #define ARRAYSIZE 12
- 
-int compareTo(int, int);
-int showArray(int[], int);
-int find(int, int[], int);
-int binarySearch(int, int[], int, int);
+#define ARRAYSIZE 12
 
 // Counter of steps in the binary search algorithm
 int gAlgorithmStepsCounter;
 
 int main() {
-	int numbers[] = {1, 2, 4, 5, 7, 8, 11, 15, 17, 33, 40, 45};
+	int find(int, int[], int);
+	int showArray(int[], int);
+	
+	int numbers[ARRAYSIZE] = {1, 2, 4, 5, 7, 8, 11, 15, 17, 33, 40, 45};
+	
+	// Show array of integers on Console
 	printf("Array to find a number in: ");
 	showArray(numbers, ARRAYSIZE);
 	printf("\n");
 	
+	// REPL to find numbers in the given array
 	int i, index;
 	while(1)
 	{
@@ -46,7 +47,9 @@ int main() {
 // to look for a number in the given array.
 int find(int target, int numbers[], int size)
 {
-	// Reset counter for Binary Search steps
+	int binarySearch(int, int[], int, int);
+	
+	// Reset counter for countig Binary Search steps
 	gAlgorithmStepsCounter = 0;
 	
 	return binarySearch(target, numbers, 0, size);
@@ -56,6 +59,8 @@ int find(int target, int numbers[], int size)
 int binarySearch(int target, int numbers[],
                  int start, int limit)
 {
+	int compareTo(int, int);
+	
 	// Counting algorithm stepts
 	gAlgorithmStepsCounter++;
 	
