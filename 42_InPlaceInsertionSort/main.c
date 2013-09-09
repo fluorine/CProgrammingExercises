@@ -1,5 +1,8 @@
 #include <stdio.h>
 
+//Size of array
+#define SIZE 10
+
 /* Sorting an array using Insertion Sort O(n^2) */
 
 void printArray(int[], int);
@@ -11,14 +14,14 @@ int main() {
 	
 	// Print original array
 	printf("Original array: ");
-	printArray(items, 10);
+	printArray(items, SIZE);
 	
 	// Sorting array
-	insertionsort(items, 10);
+	insertionsort(items, SIZE);
 	
 	// Print sorted array
 	printf("Sorted array:   ");
-	printArray(items, 10);
+	printArray(items, SIZE);
 	
 	return 0;
 }
