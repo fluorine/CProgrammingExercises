@@ -28,6 +28,9 @@ int main(void) {
 			c = getc(inputFile);
 			putchar(c);
 		} while(c != EOF);
+		
+		// Close file
+		fclose(inputFile);
 	}
 	
 	return 0;
