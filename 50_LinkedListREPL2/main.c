@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* This little application uses a REPL to generate 
- * a linked list of integers at runtime. This version
+/* This little application generates a linked list
+ * of integers at runtime, from user. This version
  * allows the user to delete items.
  *
  * This application is an example of the use of
@@ -89,7 +89,7 @@ struct LinkedNode *deleteNode(struct LinkedNode *list, int input) {
 		return list;
 	} else {
 		if(list->value == input) {
-			// Free current pointer
+			// Free current memory
 			struct LinkedNode *temp = list->next;
 			free(list);
 			return temp;

@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* This little application uses a REPL to generate 
- * a linked list of integers at runtime.
+/* This little application generates a linked list
+ * of integers at runtime.
  *
  * This application is an example of the use of
  * dynamic memory allocation.
